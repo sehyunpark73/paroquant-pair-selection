@@ -3,7 +3,7 @@ from pathlib import Path
 
 from huggingface_hub import HfApi, hf_hub_download, snapshot_download
 
-REPO_NAME = "s4986p/paroquant-pair-selection"
+REPO_NAME = "sehyunpark73/paroquant-pair-selection"
 
 
 def load_rows(

@@ -2,8 +2,9 @@
 
 ## 배경
 - [paroquant](https://arxiv.org/abs/2511.10645)는 group 안 channel을 pair로 묶어 rotation하고, 그 각도를 학습해 양자화 loss를 줄임
-- [현행 구현](https://github.com/z-lab/paroquant/blob/legacy/paroquant/optimize.py)은 pair를 random으로 고름
-- 저자는 [open review 답변](https://openreview.net/forum?id=1USeVjsKau)에서 pair를 고르는 기준에 robust하다고 함
+- 논문 motivation은 outlier channel과 normal channel을 묶는 것
+- 허나 [현행 구현](https://github.com/z-lab/paroquant/blob/legacy/paroquant/optimize.py)은 pair를 random으로 고름
+- 이에 저자는 [open review 답변](https://openreview.net/forum?id=1USeVjsKau)에서 independence를 지킨다면 pair 기준에 robust하다고 함
 - 이 프로젝트는 pair를 고르는 기준만 바꿔 이 주장을 확인
 
 ## 요약
@@ -21,12 +22,6 @@
 ## 남은 실험
 - 모델 전체를 양자화해 ppl로도 arm 사이 차이가 나는지 확인
 - 총 step을 맞춘 비교를 다른 모델과 seed에서도 확인
-
-## 관련 연구
-#### [paroquant: pairwise rotation quantization for efficient reasoning llm inference](https://arxiv.org/abs/2511.10645)
-- pair마다 givens rotation 각도와 channel scaling을 학습해, rtn보다 loss를 줄인다고 보고
-- 논문 motivation은 outlier channel과 normal channel을 묶는 것이지만, pair를 고르는 기준은 비교하지 않음
-- 이 프로젝트는 pair를 고르는 기준만 바꿔 비교
 
 ## 공통 설정
 - 각 실험의 설정에 따로 적지 않으면 아래 값을 사용
